@@ -1,0 +1,99 @@
+@mixin edit-bootstrap($lg, $md, $sm, $xs) {
+  @include make-xs-column($xs);
+  @include make-sm-column($sm);
+  @include make-md-column($md);
+  @include make-lg-column($lg);
+}
+
+@mixin header1 {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 45px;
+}
+
+@mixin header2 {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 39px;
+}
+
+@mixin header3 {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+@mixin header4 {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 17px;
+  line-height: 28px;
+}
+
+@mixin header5 {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+@mixin paragraph1 {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+@mixin paragraph2 {
+  color: $main-color;
+  font-family: $main-font;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+@mixin strips {
+  width: 600px;
+  height: 3px;
+  background-color: $white;
+}
+
+@mixin button {
+  background-color: $button;
+  border: none;
+  border-radius: 5px;
+  width: 80px;
+  height: 31px;
+  color: $white;
+  font-size: 15px;
+  font-weight: bold;
+  outline: none;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+@mixin likeDislike {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  outline: none;
+  border-radius: 5px;
+}
+
+@mixin stars {
+  background-position: (40px center, 56px center, 72px center, 88px center, 104px center);
+  background-repeat: no-repeat;
+  margin: 5px 0 0 10px;
+  height: 14px;
+  width: 120px;
+}

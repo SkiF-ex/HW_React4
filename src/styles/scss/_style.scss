@@ -1,0 +1,401 @@
+body {
+    background-color: black;
+}
+
+.header {
+    @include header2;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+
+    &-title {
+        color: $white;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    &-title:hover {
+        text-decoration: none;
+        color: $white;
+    }
+}
+
+.strip-horizontal {
+    @include strips;
+
+    width: 95%;
+    margin: 0 auto;
+}
+
+.strip-vertical {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background-color: $white;
+}
+
+.homepage {
+    &_buttons {
+        display: flex;
+        flex-direction: column;
+
+        &-element {
+            @include button;
+
+            margin-top: 20px;
+        }
+    }
+
+    &_left-block {
+        @include edit-bootstrap(12, 12, 12, 12);
+
+        &-filters {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &-item {
+                margin: 5px;
+
+                &-title {
+                    @include header3;
+                    font-weight: bold;
+                }
+
+                &-input {
+                    border: none;
+                    border-radius: 5px;
+                    width: 230px;
+                    padding: 5px;
+                    outline: none;
+                }
+
+                &-search {
+                    height: 30px;
+                    border: none;
+                    margin-left: -10px;
+                    background-color: white;
+                    width: 50px;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                    outline: none;
+                    
+                    &:hover {
+                        background-color: $button-hover;
+                      }
+                }
+
+                &-reset {
+                    height: 30px;
+                    border: none;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    background-color: white;
+                    width: 50px;
+                    outline: none;
+                    
+                    &:hover {
+                        background-color: $button-hover;
+                      }
+                }
+
+                &-button {
+                    @include button;
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+
+    &_right-block {
+        @include edit-bootstrap(12, 12, 12, 12);
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        border: 1px solid $white;
+        margin: 10px 0;
+        padding: 10px 0 0 10px;
+
+        &-rating {
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 10px;
+            padding-bottom: 10px;
+            margin-left: -10px;
+
+            &-title {
+                color: $white;
+            }
+
+            &-likes {
+                margin: 10px 0 10px 0;
+                color: red;
+            }
+
+            &-stars {
+                background-position: (0px center, 17px center, 32px center, 47px center, 62px center);
+                background-repeat: no-repeat;
+                margin: 0 0 0 0;
+                height: 14px;
+                width: 80px;
+            }
+        }
+
+        &-details {
+            padding: 10px;
+            margin-top: -11px;
+            width: 50%;
+            color: $white;
+            font-weight: 200;
+            line-height: 25px;
+
+            &-director {
+                font-weight: 200;
+            }
+
+            &-actors {
+                font-weight: 200;
+            }
+
+            &-genres {
+                font-weight: 200;
+            }
+
+            &-description {
+                font-weight: 200;
+            }
+
+            &-image {
+                width: 100%;
+                background-position: 50%;
+            }
+        }
+    }
+}
+
+.nav {
+    display: flex;
+
+    &_elem {
+        margin: 0 10px;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginReister {
+    margin-top: 10%;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_title {
+        margin-bottom: 10px;
+    }
+
+    &_input {
+        margin: 10px 0;
+        border-radius: 5px;
+        padding: 5px;
+        border: none;
+        outline: none;
+    }
+
+    &_button {
+        margin: 10px 0 20px 0;
+        @include button;
+    }
+}
+
+.logout-button {
+    @include button;
+    float: right;
+    margin-right: 3%;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_block {
+        display: flex;
+        color: $white;
+
+        &-title {
+            width: 100px;
+            margin: 10px 10px;
+            @include header3;
+            float: right;
+            position: relative;
+        }
+
+        &-input {
+            border-radius: 5px;
+            padding: 5px;
+            border: none;
+            outline: none;
+            width: 391px;
+            margin: 10px 10px;
+            height: 35px;
+        }
+
+        &-textarea {
+            width: 391px;
+            height: 500px;
+            resize: none;
+            outline: none;
+            border-radius: 5px;
+            margin: 10px 10px;
+            padding: 5px;
+        }
+
+        &-buttons {
+            &-element {
+                @include button;
+
+                margin: 20px 5px 20px 5px;
+            }
+        }
+    }
+}
+
+.movieContainer {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.movieBlock {
+    background-color: $white;
+    width: 110px;
+    height: 100px;
+    border: 1px solid $white;
+    border-radius: 5px;
+    display: inline-table;
+    margin: 10px;
+    padding: 10px;
+
+    &_likeDescriptionContainer {
+        display: flex;
+    }
+
+    &_rating {
+        &-stars {
+            @include stars;
+            border-top: 1px solid black;
+            margin: -1px 0 0 -11px;
+        }
+    }
+
+    &_descriptionBlock {
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 10px;
+        margin-top: -11px;
+        margin-right: -11px;
+
+        &-image {
+            width: 110px;
+            background-position: 50%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        &-title {
+            @include header3;
+            color: blue;
+            font-weight: 900;
+            font-size: 15px;
+            line-height: 15px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(77, 218, 236, 0.514);
+                border-radius: 5px;
+            }
+        }
+    }
+
+    &_likeBlock {
+        position: relative;
+
+        &-likes {
+            border-bottom: 1px solid black;
+            margin-left: -11px;
+            width: 40px;
+            text-align: center;
+        }
+
+        &-likeCounter {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        &-like {
+            background-image: url(../../img/like.png);
+            @include likeDislike;
+
+            &:hover {
+                box-shadow: 3px 0 10px green;
+                background-color: rgba(0, 255, 21, 0.342);
+              }
+        }
+
+        &-dislike {
+            background-image: url(../../img/dislike.png);
+            @include likeDislike;
+
+            &:hover {
+                box-shadow: 3px 0 10px red;
+                background-color: rgba(255, 0, 0, 0.342);
+              }
+        }
+    }
+}
+
+
+.one--star {
+    background-image: url(../../img/star-one.png), url(../../img/star-zero.svg), url(../../img/star-zero.svg), url(../../img/star-zero.svg), url(../../img/star-zero.svg);
+}
+
+.two--stars {
+    background-image: url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-zero.svg), url(../../img/star-zero.svg), url(../../img/star-zero.svg);
+}
+
+.three--stars {
+    background-image: url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-zero.svg), url(../../img/star-zero.svg);
+}
+
+.four--stars {
+    background-image: url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-zero.svg);
+}
+  
+.five--stars {
+    background-image: url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-one.png), url(../../img/star-one.png);
+}
+
+.imgContainer {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.titleContainer {
+    height: 62px;
+}
